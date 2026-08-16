@@ -11,8 +11,8 @@
     "setup:backend": "bash scripts/setup-backend.sh",
     "icon": "node scripts/render-icon.mjs",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac",
-    "dist:arm64": "electron-builder --mac --arm64"
+    "dist": "electron-builder --mac --publish never",
+    "dist:arm64": "electron-builder --mac --arm64 --publish never"
   },
   "build": {
     "appId": "com.deepseek.harness.desktop",

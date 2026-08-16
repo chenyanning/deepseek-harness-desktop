@@ -1,0 +1,64 @@
+{
+  "name": "deepseek-harness-desktop",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness desktop app — the full browser GUI in a native window, no browser needed.",
+  "private": true,
+  "main": "main.cjs",
+  "author": "chenyanning",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "setup:backend": "bash scripts/setup-backend.sh",
+    "icon": "node scripts/render-icon.mjs",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --mac",
+    "dist:arm64": "electron-builder --mac --arm64"
+  },
+  "build": {
+    "appId": "com.deepseek.harness.desktop",
+    "productName": "DeepSeek Harness",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "DeepSeek Harness",
+      "artifactName": "DeepSeek-Harness-${version}-${arch}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "43.4.0",
+    "electron-builder": "^26.15.3"
+  }
+}

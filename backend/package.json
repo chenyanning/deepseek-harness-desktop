@@ -1,0 +1,10 @@
+{
+  "name": "deepseek-harness-desktop-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bundled DeepSeek Harness web backend for the desktop app (production install of @deepseek-ai/dsh).",
+  "license": "MIT",
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.1.0-rc.6"
+  }
+}

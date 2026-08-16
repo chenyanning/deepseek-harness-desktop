@@ -10,6 +10,7 @@ A self-contained **macOS desktop app** for [DeepSeek Harness](https://github.com
 - **Self-contained** — bundles a production install of `@deepseek-ai/dsh` (backend + frontend dist + native modules).
 - **Reuses `~/.dsh`** — your model, API key, sessions, skills, and settings carry over automatically.
 - **Free port** — binds `127.0.0.1` on an OS-assigned port (no conflict with port 3080).
+- **Image input** — paste or drop images into the chat; the bundled DeepSeek adapter is patched to send them as native vision input (`deepseek-v4-pro` image reasoning).
 - **Clean lifecycle** — closing the window stops the backend; re-opening restarts it; `⌘Q` quits everything.
 
 ## How it works

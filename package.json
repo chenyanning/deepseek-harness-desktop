@@ -1,6 +1,6 @@
 {
   "name": "deepseek-harness-desktop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DeepSeek Harness desktop app — the full browser GUI in a native window, no browser needed.",
   "private": true,
   "main": "main.cjs",

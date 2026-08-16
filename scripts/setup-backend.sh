@@ -22,4 +22,8 @@ mkdir -p vendor
 rm -rf vendor/node_modules
 mv node_modules vendor/node_modules
 
+# Patch the DeepSeek adapter to accept image content (native vision on
+# deepseek-v4-pro); idempotent, so re-running setup is safe.
+node ../scripts/patch-vision.mjs
+
 echo "✓ backend ready at backend/vendor/node_modules"
